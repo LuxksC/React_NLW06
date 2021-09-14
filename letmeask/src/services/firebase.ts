@@ -1,11 +1,11 @@
-import firebase from 'firebase/compat/app'
+import firebase from 'firebase/compat/app';
 
-//import firebase from "firebase/app";
+//import firebase from "firebase/app" the compat term is due to an update in firebase version
 
-import 'firebase/compat/auth';
-import 'firebase/compat/database';
+import 'firebase/compat/auth'; //import the authentication research from firebase
+import 'firebase/compat/database'; // import the database research from firebase
 
-const firebaseConfig = {
+const firebaseConfig = { //configuration off API Keys
   apiKey: process.env.REACT_APP_API_KEY,
   authDomain: process.env.REACT_APP_AUTH_DOMAIN,
   databaseURL: process.env.REACT_APP_DATABASE_URL,
@@ -15,7 +15,7 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_APP_ID,
 };
 
-firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig); //function necessary to initialize firebase
 
-export const auth = firebase.auth();
-export const database = firebase.database();
+export const auth = firebase.auth(); //constant create in order to facilitate the call of authentication research
+export const database = firebase.database(); //constant create in order to facilitate the call of database research
