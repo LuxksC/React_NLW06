@@ -1,0 +1,22 @@
+:root {
+  /* colors */
+  --hue: 255;
+  --second-hue: 349;
+  /*HSL Color Mode*/
+  --base-color: hsl(var(--hue) 98% 67%);
+  --base-color-hover: hsl(var(--hue) 64% 57%);
+  --base-color-second: hsl(var(--second-hue) 77% 58%);
+  --base-color-second-hover: hsl(var(--second-hue) 66% 53%);
+  --base-color-background: hsl(0 0% 97%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--base-color-background);
+  color: #29292e;
+}

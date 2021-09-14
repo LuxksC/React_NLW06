@@ -1,6 +1,6 @@
 //File destinated to some testes with the button component
 
-import { useState } from "react" // aloows the use off ComponentStates in the file
+import { useState } from "react" // alows the use off ComponentStates in the file
 
 export function Button() { //create component Button and export to use in "App.tsx"
   const [counter, setCounter] = useState(0) // create state counter with initial value 0

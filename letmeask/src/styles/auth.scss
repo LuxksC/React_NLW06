@@ -1,0 +1,139 @@
+#page-auth {
+  display: flex;
+  align-items: stretch;
+  height: 100vh;
+
+  aside {
+    flex: 7;
+
+    background: var(--base-color);
+    color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 120px 80px;
+
+    img {
+      max-width: 320px;
+    }
+
+    strong {
+      font: 700 36px 'Poppins', sans-serif;
+      line-height: 42px;
+      margin-top: 16px;
+    }
+
+    p {
+      font-size: 24px;
+      line-height: 32px;
+      margin-top: 16px;
+      color: var(--base-color-background);
+    }
+  }
+
+  main {
+    flex: 8;
+
+    padding: 0 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+
+    align-items: stretch;
+    text-align: center;
+
+    img {
+      align-self: center;
+    }
+
+    form {
+      input {
+        padding: 0 16px;
+        background: #fff;
+        border: 1px solid #a8a8b3;
+      }
+
+      button {
+        margin-top: 16px;
+        background: var(--base-color);
+        color: var(--base-color-background);
+        border: none;
+        font: 400 16px 'Roboto', sans-serif;
+
+        cursor: pointer;
+
+        transition: background-color 0.2s;
+
+        &:hover {
+          background-color: var(--base-color-hover);
+        }
+      }
+
+      input,
+      button {
+        height: 50px;
+        width: 100%;
+        border-radius: 8px;
+      }
+    }
+  }
+
+  .create-room {
+    display: flex;
+    margin-top: 56px;
+    height: 50px;
+    border-radius: 8px;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    background: #ea4335;
+    color: #fff;
+    font: 400 16px 'Roboto', sans-serif;
+
+    cursor: pointer;
+
+    transition: filter 0.2s;
+
+    img {
+      margin-right: 8px;
+    }
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+
+  .separator {
+    margin: 32px 0;
+    color: #a8a8b3;
+    font: 400 14px 'Roboto', sans-serif;
+    align-items: center;
+    display: flex;
+
+    &::before {
+      content: '';
+      height: 1px;
+      flex: 1;
+      background: #a8a8b3;
+      margin-right: 16px;
+    }
+
+    &::after {
+      content: '';
+      height: 1px;
+      flex: 1;
+      background: #a8a8b3;
+      margin-left: 16px;
+    }
+  }
+}
