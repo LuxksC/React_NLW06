@@ -56,6 +56,11 @@
       align-self: center;
     }
 
+    h2 {
+      font: 700 24px 'Poppins', sans-serif;
+      margin: 64px 0 24px;
+    }
+
     form {
       input {
         padding: 0 16px;
@@ -63,27 +68,21 @@
         border: 1px solid #a8a8b3;
       }
 
-      button {
-        margin-top: 16px;
-        background: var(--base-color);
-        color: var(--base-color-background);
-        border: none;
-        font: 400 16px 'Roboto', sans-serif;
-
-        cursor: pointer;
-
-        transition: background-color 0.2s;
-
-        &:hover {
-          background-color: var(--base-color-hover);
-        }
-      }
-
-      input,
-      button {
+      input {
         height: 50px;
         width: 100%;
         border-radius: 8px;
+      }
+    }
+
+    p {
+      font: 400 14px 'Roboto', sans-serif;
+      color: #737380;
+      margin-top: 16px;
+
+      a {
+        color: #e559f9;
+        margin-left: 5px;
       }
     }
   }

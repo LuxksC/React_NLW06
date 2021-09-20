@@ -1,16 +1,13 @@
-//File destinated to some testes with the button component
+import { ButtonHTMLAttributes } from 'react' // import button HTML attributes to be used in React
 
-import { useState } from "react" // alows the use off ComponentStates in the file
+import '../styles/button.scss'
 
-export function Button() { //create component Button and export to use in "App.tsx"
-  const [counter, setCounter] = useState(0) // create state counter with initial value 0
-  //React just understand changes in a variable if it is a state.
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>; // Define ButtonProps as all the attributes that can be assigned to a button element in HTML
 
-  function increment() { // function to increment the value off counter
-    setCounter(counter + 1) //function that allows to change a state value. Canges counter to counter+1.
-  }
-  console.log(counter)
+
+
+export function Button(props: ButtonProps) { 
   return(
-    <button onClick={increment}/*atribute from button that calls an action on click*/ >{counter}</button> //create button and calls the function increment when button click
+    <button className="button" {...props}/>
   )
 }

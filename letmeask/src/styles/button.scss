@@ -1,0 +1,23 @@
+.button {
+  margin-top: 16px;
+  background: var(--base-color);
+  color: var(--base-color-background);
+  border: none;
+  font: 400 16px 'Roboto', sans-serif;
+  height: 50px;
+  width: 100%;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  transition: background-color 0.2s;
+
+  &:not(:disabled):hover {
+    background-color: var(--base-color-hover);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}

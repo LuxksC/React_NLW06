@@ -6,7 +6,7 @@ import { Button } from '../components/Button';
 
 import '../styles/auth.scss';
 
-export function Home() {
+export function NewRoom() {
   return(
     <div id="page-auth">
       <aside>
@@ -17,21 +17,18 @@ export function Home() {
       <main>
         <div className="main-content">
           <img src={logoImg} alt="letmeask logo"/>
-          <button className="create-room">
-            <img src={googleIconImg} alt="Google logo" />
-            Create your room with Google
-          </button>
-          <div className="separator">
-            or join a room
-          </div>
+          <h2>Create a new room</h2>
           <form>
             <input type="text"
-            placeholder="Type the room code" 
+            placeholder="Room's name" 
             />
             <Button type="submit">
-              Join room
+              Create room
             </Button>
           </form>
+          <p>Want to join a room?  
+          <a href="#">Click here</a>
+          </p>
         </div>
       </main>
     </div>
