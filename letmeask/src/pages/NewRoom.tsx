@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import illustrationImg from '../assets/images/illustration.svg'
 import logoImg from '../assets/images/logo.svg'
 import googleIconImg from '../assets/images/google-icon.svg'
@@ -27,7 +29,7 @@ export function NewRoom() {
             </Button>
           </form>
           <p>Want to join a room?  
-          <a href="#">Click here</a>
+          <Link to="/">Click here</Link>
           </p>
         </div>
       </main>

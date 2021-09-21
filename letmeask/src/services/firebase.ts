@@ -17,5 +17,7 @@ const firebaseConfig = { //configuration off API Keys
 
 firebase.initializeApp(firebaseConfig); //function necessary to initialize firebase
 
-export const auth = firebase.auth(); //constant create in order to facilitate the call of authentication research
-export const database = firebase.database(); //constant create in order to facilitate the call of database research
+const auth = firebase.auth(); //constant create in order to facilitate the call of authentication research
+const database = firebase.database(); //constant create in order to facilitate the call of database research
+
+export { firebase, auth, database }
