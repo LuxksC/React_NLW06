@@ -1,7 +1,9 @@
-import { useContext } from 'react'
+import { FormEvent, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
-import { auth, firebase } from '../services/firebase'
+import { useAuth } from '../hooks/useAuth'
+
+import { database } from '../services/firebase'
 
 import illustrationImg from '../assets/images/illustration.svg'
 import logoImg from '../assets/images/logo.svg'
@@ -9,23 +11,41 @@ import googleIconImg from '../assets/images/google-icon.svg'
 
 import { Button } from '../components/Button';
 
-import { TestContext } from '../App'
-
 import '../styles/auth.scss';
+
 
 
 export function Home() {
   const history = useHistory();
-  const value = useContext(TestContext);
+  const { user, signInWithGoogle } = useAuth();
+  const [roomCode, setRoomCode] = useState('');
 
-  function handleCreateRoom() {
-    const provider = new firebase.auth.GoogleAuthProvider();
-
-    auth.signInWithPopup(provider).then(result =>  {
-      console.log(result);
-    });
+  async function handleCreateRoom() {
+    if(!user){
+      await signInWithGoogle();
+    }
 
     history.push('/room/new');
+  }
+
+
+  async function handleJoinRoom(event: FormEvent) {
+    event.preventDefault();
+
+    if (roomCode.trim() === '') { 
+      alert('Please write a valid name')
+      return;
+    }
+
+    const roomRef = await database.ref(`rooms/${roomCode}`).get();
+
+    if (!roomRef.exists()) {
+      alert('Room does not exist');
+      return;
+    }
+
+    history.push(`/room/${roomCode}`)
+
   }
 
   return(
@@ -37,7 +57,6 @@ export function Home() {
       </aside>
       <main>
         <div className="main-content">
-          <h1>{value}</h1>
           <img src={logoImg} alt="letmeask logo"/>
           <button onClick={handleCreateRoom} className="create-room">
             <img src={googleIconImg} alt="Google logo" />
@@ -46,9 +65,11 @@ export function Home() {
           <div className="separator">
             or join a room
           </div>
-          <form>
+          <form onSubmit={handleJoinRoom}>
             <input type="text"
             placeholder="Type the room code" 
+            onChange={event => setRoomCode(event.target.value)}
+            value={roomCode}
             />
             <Button type="submit">
               Join room

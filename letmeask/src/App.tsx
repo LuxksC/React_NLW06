@@ -1,20 +1,36 @@
-import { createContext } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
-import { BrowserRouter, Route } from 'react-router-dom'
+import { Toaster } from 'react-hot-toast';
 
 import { Home } from './pages/Home';
 import { NewRoom } from './pages/NewRoom';
+import { Room } from './pages/Room';
 
-export const TestContext = createContext('')
+import { AuthContextProvider } from './contexts/AuthContext'
+
+
 
 function App() {//create component that represents the application
+
+
   return ( //return app components that structure the HTML file
-    <BrowserRouter>
-      <TestContext.Provider value={'Teste'}>
-        <Route path="/" exact={true} component={Home} />
-        <Route path="/room/new" exact={true} component={NewRoom} />
-      </TestContext.Provider>
-    </BrowserRouter>
+    <div>
+      <div>
+        <Toaster
+        position="top-center"
+        reverseOrder={false}
+        />
+      </div>
+      <BrowserRouter>
+        <AuthContextProvider>
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/room/new" component={NewRoom} />
+            <Route path="/room/:id" component={Room} />
+          </Switch>
+        </AuthContextProvider>
+      </BrowserRouter>
+    </div>
   );
 }
 
