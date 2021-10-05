@@ -1,0 +1,38 @@
+.question {
+  padding: 24px;
+  background: #fefefe;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+
+  & + .question {
+    margin-top: 8px;
+  }
+
+  p {
+    font: 400 16px 'Roboto', sans-serif;
+    color: #29292e;
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+
+    .user-info {
+      display: flex;
+      align-items: center;
+
+      img {
+        height: 32px;
+        width: 32px;
+        border-radius: 50%;
+      }
+
+      span {
+        margin-left: 8px;
+        color: #737380;
+        font: 500 14px 'Roboto', sans-serif;
+      }
+    }
+  }
+}
