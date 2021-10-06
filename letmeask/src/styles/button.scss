@@ -12,6 +12,16 @@
 
   transition: background-color 0.2s;
 
+  &.outline {
+    background: #fff;
+    color: #835afd;
+    border: 1px solid #835afd;
+  }
+
+  &.outline:hover {
+    color: #fff;
+  }
+
   &:not(:disabled):hover {
     background-color: var(--base-color-hover);
   }
