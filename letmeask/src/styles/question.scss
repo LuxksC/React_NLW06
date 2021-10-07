@@ -8,6 +8,25 @@
     margin-top: 8px;
   }
 
+  &.highlighted {
+    background: #f4f0ff;
+    border: 1px solid #835afd;
+
+    footer .user-info span {
+      color: #29292e;
+    }
+  }
+
+  &.answered {
+    background: #dbdcdd;
+    footer .user-info img {
+      filter: brightness(0.5);
+    }
+    p {
+      color: #737380;
+    }
+  }
+
   p {
     font: 400 16px 'Roboto', sans-serif;
     color: #29292e;
@@ -29,10 +48,14 @@
       }
 
       span {
-        margin-left: 8px;
         color: #737380;
         font: 500 14px 'Roboto', sans-serif;
       }
+    }
+
+    div {
+      display: flex;
+      gap: 8px;
     }
 
     button {
